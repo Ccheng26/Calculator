@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="cs.css">
+<head>
+	<title>Calculator</title>
+</head>
+<body>
+
+
+<form name="Calc">
+<table border=3>
+<tr>
+<td>
+<input class="field" type="text" name="Input" id="av">
+
+<tr>
+	<td>
+<input type="button" name="one" class="numbr" value=" 1 " onclick="Calc.Input.value += '1'"> 
+<input type="button" name="two" class="numbr" value=" 2 " onclick="Calc.Input.value += '2'">
+<input type="button" name="three" class="numbr" value=" 3 " onclick="Calc.Input.value += '3'">
+<input type="button" name="plus" class="numbr" value=" + " onclick="Calc.Input.value += ' + '">
+</td>
+	</div>
+</tr>
+<tr>
+<td>
+<input type="button" name="four" class="numbr" value=" 4 " onclick="Calc.Input.value += '4'">
+<input type="button" name="five" class="numbr" value=" 5 " onclick="Calc.Input.value += '5'">
+<input type="button" name="six" class="numbr" value=" 6 " onclick="Calc.Input.value += '6'">
+<input type="button" name="minus" class="numbr" value=" - " onclick="Calc.Input.value += ' - '">
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="button" name="seven" class="numbr" value=" 7 " onclick="Calc.Input.value += '7'">
+<input type="button" name="eight" class="numbr" value=" 8 " onclick="Calc.Input.value += '8'">
+<input type="button" name="nine" class="numbr" value=" 9 " onclick="Calc.Input.value += '9'">
+<input type="button" name="mult" class="numbr" value=" * " onclick="Calc.Input.value += ' * '">
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="button" name="0" class="numbr" value=" 0 " onclick="Calc.Input.value += ' 0'">
+<span><input type="button" name="clear" class="numbr" value=" C " onclick="Calc.Input.value = ' '"></span>
+<input type="button" name="divide" class="numbr" value=" /  " onclick="Calc.Input.value += ' / '">
+<input type="button" name="DoIt" class="numbr" value=" = " onclick="Calc.Input.value = eval(Calc.Input.value)">
+</td>
+</tr>
+<tr>
+<td>
+<span><input type="button" name="average" id="ob" value=" AVG " onclick="getAverage()"></span>
+
+</td>
+
+</tr>
+
+</table>
+</form>
+
+<script type="text/javascript">
+
+function getAverage()
+{
+	var nums = document.getElementById('av').value;
+var numArray = nums.split('+');
+var total = 0;
+for (var i=0; i< numArray.length; i++) {
+	total += Number(numArray[i]);
+}
+var avg = total/numArray.length;
+document.getElementById('av').value= avg;
+}
+
+
+</script>
+
+</body>
+</html>
+
